@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Editar Perfil</h2>
+    <div class="card">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_first_name" class="form-label">Nombre:</label>
+                    {{ user_form.first_name }}
+                    {{ user_form.first_name.errors }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_last_name" class="form-label">Apellido:</label>
+                    {{ user_form.last_name }}
+                    {{ user_form.last_name.errors }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Email:</label>
+                    {{ user_form.email }}
+                    {{ user_form.email.errors }}
+                </div>
+               
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

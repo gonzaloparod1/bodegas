@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Resultado de Cotización</h2>
+
+  <h3>Bodegas seleccionadas:</h3>
+  <ul>
+    {% for bodega in bodegas_cotizadas %}
+      <li>{{ bodega.codigo }} ({{ bodega.tipo }}) - {{ bodega.precio_mensual }} CLP/mes</li>
+    {% endfor %}
+  </ul>
+
+  <h3 class="mt-4">Total a pagar por mes: {{ total }} CLP</h3>
+
+  <a href="{% url 'cotizar' %}" class="btn btn-primary mt-3">Volver a cotizar</a>
+</div>
+{% endblock %}

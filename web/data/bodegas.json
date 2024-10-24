@@ -1,0 +1,34 @@
+[
+    {
+        "model": "web.bodega",
+        "pk": 1,
+        "fields": {
+            "codigo": "BOD001",
+            "tipo_bodega": 1
+        }
+    },
+    {
+        "model": "web.bodega",
+        "pk": 11,
+        "fields": {
+            "codigo": "BOD011",
+            "tipo_bodega": 1
+        }
+    },
+    {
+        "model": "web.bodega",
+        "pk": 2,
+        "fields": {
+            "codigo": "BOD002",
+            "tipo_bodega": 2
+        }
+    },
+    {
+        "model": "web.bodega",
+        "pk": 3,
+        "fields": {
+            "codigo": "BOD003",
+            "tipo_bodega": 3
+        }
+    }
+]

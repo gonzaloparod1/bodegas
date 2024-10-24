@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container d-flex">
+  <div class="container">
+    <h2>Cotización de Bodegas</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div>
+        <select name="tipo_bodega" id="id_tipo_bodega" class="form-control">
+          <option value="" selected>Seleccione un tipo de bodega para agregar a su cotización</option>
+          {% for tipo in tipo_bodegas %}
+          <option value="{{ tipo.id }}">
+            {{ tipo.tipo }} - {{ tipo.metros_cuadrados }} m²
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Agregar Bodega</button>
+    </form>
+
+    <h3 class="mt-4">Bodegas seleccionadas:</h3>
+    <ul>
+      {% for bodega in bodegas_cotizadas %}
+      <li>
+        {{ bodega.codigo }} ({{ bodega.tipo }}) - {{ bodega.precio_mensual }}
+        CLP/mes
+      </li>
+      {% empty %}
+      <li>No ha seleccionado ninguna bodega.</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{% url 'resultado_cotizacion' %}" class="btn btn-success mt-3"
+      >Solicitar Cotización</a
+    >
+  </div>
+  <div class="container">
+    <h3>Modelos de Bodegas Disponibles para Cotización</h3>
+    <ul>
+      {% for tipo in tipo_bodegas %}
+      <p>
+        Tipo: {{ tipo.tipo }} - {{ tipo.metros_cuadrados }} m² - Precio mensual: {{ tipo.precio_mensual }}
+      </p>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

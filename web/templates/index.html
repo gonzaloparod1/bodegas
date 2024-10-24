@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  {% if messages %}
+  <div>
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <h2>Noticias</h2>
+  <div class="row">
+    {% for n in noticias %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img
+          src="{{n.imagen_url}}"
+          class="card-img-top"
+          alt="Imagen de noticia"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ n.titulo }}</h5>
+          <p class="card-text">{{ n.cuerpo }}</p>
+          <div class="text-center mt-3 d-flex">
+            <form method="post" action="{% url 'like' n.id %}">
+              {% csrf_token %}
+              {% if n.id in user_likes %}
+              <button type="submit" class="btn btn-outline-danger like-btn">
+                <i class="fas fa-heart"></i> <!-- Ya dio like -->
+              </button>
+              {% else %}
+              <button type="submit" class="btn btn-outline-danger like-btn">
+                <i class="far fa-heart"></i> <!-- No ha dado like -->
+              </button>
+              {% endif %}
+            </form>
+            <p style="margin: 1rem;">{{ n.likes.count }}</p> <!-- Número de likes -->
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

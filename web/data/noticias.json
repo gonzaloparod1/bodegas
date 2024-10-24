@@ -1,0 +1,29 @@
+[
+    {
+        "model": "web.noticia",
+        "pk": 1,
+        "fields": {
+            "titulo": "Nuevo Almacén Abierto en Ciudad Central",
+            "cuerpo": "Hemos inaugurado un nuevo almacén en la Ciudad Central. Este almacén cuenta con todas las medidas de seguridad para productos químicos y orgánicos.",
+            "imagen_url": "https://www.sirchandler.com.ar/wp-content/uploads/2023/08/12-gaiman-chubut-3213.jpg"
+        }
+    },
+    {
+        "model": "web.noticia",
+        "pk": 2,
+        "fields": {
+            "titulo": "Promoción Especial en Almacenes Herméticos",
+            "cuerpo": "Durante este mes ofrecemos una promoción especial en nuestras bodegas herméticas. ¡Aprovecha esta oportunidad única!",
+            "imagen_url": "https://caminosdelvino.com/wp-content/uploads/2023/08/SEPTIMA-TURISMO-1-scaled.jpg"
+        }
+    },
+    {
+        "model": "web.noticia",
+        "pk": 3,
+        "fields": {
+            "titulo": "Ampliación de Bodegas Orgánicas",
+            "cuerpo": "Se ha ampliado la capacidad de nuestras bodegas especializadas en productos orgánicos. Ven y conoce nuestras nuevas instalaciones.",
+            "imagen_url": "https://resizer.glanacion.com/resizer/v2/se-multiplica-la-oferta-de-locales-restaurantes-y-GAHKGNBV2JFB7GC6AL3WPSIN7I.jpg?auth=31b8dab56e73b29e34e04f88104084a40b750b48c5f20c53da712ed9b7a13960&width=768&quality=70&smart=false"
+        }
+    }
+]
